@@ -1,0 +1,38 @@
+#neubar {
+    background: rgb(255, 255, 255);
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+
+  #neubar .nav-item {
+    margin : auto 4px;
+  }
+
+  #neubar a:hover {
+    background-color: rgb(199, 199, 199);
+  }
+
+
+
+  #neubar a {
+    
+    padding-left:12px;
+    padding-right:12px;
+  }
+
+  a:link    { color: black; text-decoration: none; }
+  a:visited { color: black; text-decoration: none; }
+  a:hover   { color: black; text-decoration: none; }
+  a:active  { color: black; text-decoration: none; }
+
+
+
+  #res {
+    background-color: rgb(255, 255, 255);
+  }
+
+
+
+
