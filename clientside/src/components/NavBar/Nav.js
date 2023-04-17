@@ -8,6 +8,8 @@ const Nav = props => {
         <nav class="navbar navbar-expand-sm navbar-light" id="neubar">
       <div class="container">
 
+        <a href="/"> EMS </a>
+
       
     
       
@@ -17,8 +19,17 @@ const Nav = props => {
           <ul class="navbar-nav ms-auto ">
             <li class="nav-item">
       
-              <a class="nav-link mx-2 active" href="/">Home</a> 
+              <a class="nav-link mx-2 active" href="/">Register</a> 
             </li>
+            <li class="nav-item">
+      
+              <a class="nav-link mx-2 active" href="/">Login</a> 
+            </li>
+            <li class="nav-item">
+      
+              <a class="nav-link mx-2 active" href="/">Employees</a> 
+            </li>
+          
           
        
 
