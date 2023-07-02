@@ -1,4 +1,4 @@
-uri = "http://localhost:8080/api/account"
+uri = "http://localhost:8080/api/account/create"
 
 const AddUserApi = {
   

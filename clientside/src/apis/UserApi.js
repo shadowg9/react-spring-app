@@ -2,7 +2,7 @@ const uri = "http://localhost:8080/api/account"
 
 const UserApi = {
     getUsers: (setUsers) => {
-        fetch(URI)
+        fetch(uri)
             .then((result) => {
                 return result.json(result)
             })

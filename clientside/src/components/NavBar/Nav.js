@@ -27,13 +27,13 @@ const Nav = props => {
             </li>
             <li class="nav-item">
       
-              <a class="nav-link mx-2 active" href="/">Employees</a> 
+              <a class="nav-link mx-2 active" href="/emp">Employees</a> 
             </li>
           
           
        
 
-        
+         
           </ul>
         </div>
       </div>
