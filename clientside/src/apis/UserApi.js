@@ -1,4 +1,4 @@
-const uri = "http://localhost:8080/api/account"
+const uri = "http://localhost:8080/api/accounts"
 
 const UserApi = {
     getUsers: (setUsers) => {
