@@ -19,7 +19,7 @@ const Nav = props => {
           <ul class="navbar-nav ms-auto ">
             <li class="nav-item">
       
-              <a class="nav-link mx-2 active" href="/">Register</a> 
+              <a class="nav-link mx-2 active" href="/reg">Register</a> 
             </li>
             <li class="nav-item">
       

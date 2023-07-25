@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import UserApi from '../../apis/UserApi';
+import DeleteUserApi from '../../apis/DeleteUserApi';
 
 
 
-const Emp = props => {
+
+
+const Emp = ({userId}) => {
 
     const [users, setUsers] = useState([]);
 
@@ -11,10 +14,21 @@ const Emp = props => {
         UserApi.getUsers(setUsers)
     }, [])
 
-    // const handleDelete = (index,e) => {
-    //     setUsers(users.filter((c, i) => i !== index));
-    // }
+    const handleDelete = () => {
+        DeleteUserApi.deleteUser(userId)
+            .then(() => {
+                console.log('User deleted successfully!');
+            })
+            .catch((error) => {
+                console.error('Error deleting user:', error.response);
+            });
+    };
 
+    
+
+
+
+ 
 
     return (
         <div>
@@ -46,6 +60,8 @@ const Emp = props => {
                                 <td>{c.last_name}</td>
                                 <td>{c.email}</td>
                                 <td>{c.notes}</td>
+                                <td><button className='btn btn-danger' onClick={() => handleDelete(userId)}>Delete</button></td>
+                                
                                
                                
                                 
@@ -61,11 +77,15 @@ const Emp = props => {
 };
 
 
+
+
+export default Emp;
+
  /* <td><button className='btn btn-danger' onClick={e => handleDelete(index, e)}>Delete</button></td>
                                 <td><button className='btn btn-primary'>Update</button></td> */
 
 
 
 
-export default Emp;
+
 

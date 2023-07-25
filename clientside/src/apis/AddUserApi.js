@@ -1,10 +1,10 @@
-uri = "http://localhost:8080/api/account/create"
+const uri = "http://localhost:8080/api/accounts/create"
 
 const AddUserApi = {
   
 
     addUsers: (user) => {
-        fetch(URI, {
+        fetch(uri, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(user)

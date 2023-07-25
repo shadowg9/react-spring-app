@@ -1,42 +1,34 @@
 import React, { useState } from 'react';
-import AddUserApi from '../apis/AddUserApi';
+import AddUserApi from '../../apis/AddUserApi'
 
 
 
 const Register = props => {
 
-    const [vin, setVin] = useState('0')
-    const [make, setMake] = useState('')
-    const [model, setModel] = useState('')
-    const [type, setType] = useState('')
-    const [year, setYear] = useState('0')
-    const [color, setColor] = useState('')
-    const [mileage, setMileage] = useState('0')
-    const [price, setPrice] = useState('0')
+    const [fname, setFname] = useState('')
+    const [lname, setLname] = useState('')
+    const [email, setEmail] = useState('')
+    const [username, setUsername] = useState('')
+    const [password, setPassword] = useState('')
+  
+   
 
-    const handleRegister = (event) => {
-        const car = {
-            "vin": vin,
-            "make": make,
-            "model": model,
-            "vehicle_type": type,
-            "vehicle_year": year,
-            "color": color,
-            "mileage": mileage,
-            "price": price,
+    const handleSubmit = (event) => {
+        const user = {
+            "first_name": fname,
+            "last_name": lname,
+            "email": email,
+            "username": username,
+            "password": password
         }
 
-        AddCarApi.addCars(car)
+        AddUserApi.addUsers(user)
 
-        setVin(0)
-        setMake('')
-        setModel('')
-        setType('')
-        setYear(0)
-        setColor('')
-        setMileage(0)
-        setPrice(0)
-        event.preventDefault();
+        setFname('')
+        setLname('')
+        setEmail('')
+        setUsername('')
+        setPassword('')
 
 
     }
@@ -48,58 +40,43 @@ const Register = props => {
 
 
 
-            <form onSubmit={handleRegister}>
-                <h3>Sell Your Car</h3>
+            <form onSubmit={handleSubmit}>
+                <h3>Sign Up</h3>
                 <div className="mb-3">
-                    <label>Vehicle Identification Number: </label>
-                    <input type="text" className="form-control" placeholder="Enter VIN" onChange={(event) => { setVin(event.target.value) }} />
+                    <label>First Name</label>
+                    <input type="text" className="form-control" placeholder="First name" onChange={(event) => { setFname(event.target.value) }} />
                 </div>
 
                 <div className="mb-3">
-                    <label>Make: </label>
-                    <input type="text" className="form-control" placeholder="Enter Car Make" onChange={(event) => { setMake(event.target.value) }} />
+                    <label>Last Name</label>
+                    <input type="text" className="form-control" placeholder="Last Name" onChange={(event) => { setLname(event.target.value) }} />
                 </div>
 
                 <div className="mb-3">
-                    <label>Model: </label>
+                    <label>Email Address</label>
 
 
-                    <input type="text" className="form-control" placeholder="Last Car Model" onChange={(event) => { setModel(event.target.value) }} />
+                    <input type="text" className="form-control" placeholder="Email Address" onChange={(event) => { setEmail(event.target.value) }} />
 
                 </div>
 
                 <div className="mb-3">
-                    <label>Vehicle Type: </label>
-                    <input type="text" className="form-control" placeholder="Enter Car Type" onChange={(event) => { setType(event.target.value) }} />
+                    <label>Username</label>
+                    <input type="text" className="form-control" placeholder="Enter Username" onChange={(event) => { setUsername(event.target.value) }} />
                 </div>
 
                 <div className="mb-3">
-                    <label>Vehicle Year: </label>
-                    <input type="text" className="form-control" placeholder="Enter Car Year" onChange={(event) => { setYear(event.target.value) }} />
+                    <label>Password</label>
+                    <input type="text" className="form-control" placeholder="Enter Password" onChange={(event) => { setPassword(event.target.value) }} />
                 </div>
 
-                <div className="mb-3">
-                    <label>Color: </label>
-                    <input type="text" className="form-control" placeholder="Enter Car Color" onChange={(event) => { setColor(event.target.value) }} />
-                </div>
-
-                <div className="mb-3">
-                    <label>Mileage: </label>
-
-
-                    <input type="text" className="form-control" placeholder="Last Car Mileage" onChange={(event) => { setMileage(event.target.value) }} />
-
-                </div>
-                <div className="mb-3">
-                    <label>Price: </label>
-                    <input type="text" className="form-control" placeholder="Selling Price" onChange={(event) => { setPrice(event.target.value) }} />
-                </div>
+                
                 <div className="d-grid">
 
 
                     <button type="submit" className="btn btn-success">
 
-                        Register Vehicle
+                        Register 
                     </button>
                 </div>
 
