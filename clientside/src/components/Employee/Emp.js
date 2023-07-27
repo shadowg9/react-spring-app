@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import UserApi from '../../apis/UserApi';
-import DeleteUserApi from '../../apis/DeleteUserApi';
+// import DeleteUserApi from '../../apis/DeleteUserApi';
+
 
 
 
@@ -14,15 +15,34 @@ const Emp = ({userId}) => {
         UserApi.getUsers(setUsers)
     }, [])
 
-    const handleDelete = () => {
-        DeleteUserApi.deleteUser(userId)
-            .then(() => {
-                console.log('User deleted successfully!');
-            })
-            .catch((error) => {
-                console.error('Error deleting user:', error.response);
-            });
-    };
+
+
+    const handleDelete = (userId) => {
+        fetch(`http://localhost:8080/api/accounts/delete/${userId}`, {
+          method: "DELETE",
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        })
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error(`HTTP status ${response.status}`);
+            }
+            // Update state to remove the deleted user from the 'users' array
+            setUsers(users.filter((user) => user.user_id !== userId));
+            console.log('User deleted successfully!');
+          })
+          .catch((error) => {
+            console.error('Error deleting user:', error);
+          });
+      };
+      
+
+
+
+
+
+  
 
     
 
@@ -60,7 +80,7 @@ const Emp = ({userId}) => {
                                 <td>{c.last_name}</td>
                                 <td>{c.email}</td>
                                 <td>{c.notes}</td>
-                                <td><button className='btn btn-danger' onClick={() => handleDelete(userId)}>Delete</button></td>
+                                <td><button className='btn btn-danger' onClick={() => handleDelete(c.user_id)} >Delete</button></td>
                                 
                                
                                
@@ -71,7 +91,15 @@ const Emp = ({userId}) => {
 
             </table>
 
+            
+
         </div>
+
+
+
+
+
+      
     );
 
 };

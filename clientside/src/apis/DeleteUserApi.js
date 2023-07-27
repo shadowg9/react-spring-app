@@ -1,4 +1,4 @@
-const uri = "http://localhost:8080/api/accounts/delete/{Id}"
+const uri = "http://localhost:8080/api/accounts/delete/{Id}";
 
 const DeleteUserApi = {
     deleteUser: (userId) => {
